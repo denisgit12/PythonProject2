@@ -1,7 +1,8 @@
 from django.db import models
 
-from apps.pizza_shop.models import PizzaShopModel
 from core.models import BaseModel
+
+from apps.pizza_shop.models import PizzaShopModel
 
 
 class PizzaModel(BaseModel):
