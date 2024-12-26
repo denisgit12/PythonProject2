@@ -13,6 +13,8 @@ from apps.pizza.serializers import PizzaSerializer
 
 class PizzaListCreateView(ListAPIView):
     serializer_class = PizzaSerializer
+    # queryset = PizzaModel.objects.less_than_size(100)
+
     queryset = PizzaModel.objects.all()
     # pagination_class = None
     filterset_class = PizzaFilter
