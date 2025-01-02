@@ -3,7 +3,7 @@ from rest_framework.generics import (
     ListCreateAPIView,
     RetrieveUpdateDestroyAPIView,
 )
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.request import Request
 
 from apps.pizza.filter import PizzaFilter
@@ -20,7 +20,7 @@ class PizzaListCreateView(ListAPIView):
     # pagination_class = None
     filterset_class = PizzaFilter
 
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (AllowAny,)
 
 class PizzaRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
     serializer_class = PizzaSerializer
