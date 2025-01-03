@@ -4,7 +4,6 @@ from core.models import BaseModel
 
 from apps.pizza_shop.models import PizzaShopModel
 
-
 class PizzaModel(BaseModel):
     class Meta:
         db_table = 'pizzas'
