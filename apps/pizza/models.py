@@ -2,7 +2,6 @@ from django.db import models
 
 from core.models import BaseModel
 
-
 class PizzaModel(BaseModel):
     class Meta:
         db_table = 'pizzas'
