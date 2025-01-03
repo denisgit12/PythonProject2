@@ -6,7 +6,6 @@ from core.models import BaseModel
 
 from apps.pizza_shop.models import PizzaShopModel
 
-
 class DaysChoices(models.TextChoices):
     MONDAY = 'Monday'
     TUESDAY = 'Tuesday'
