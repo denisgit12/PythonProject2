@@ -5,7 +5,6 @@ from rest_framework.views import APIView
 from pizza.models import PizzaModel
 from pizza.serializers import PizzaSerializer
 
-
 class PizzaListCreateView(APIView):
     def get(self, *args, **kwargs):
         pizza = PizzaModel.objects.all()
