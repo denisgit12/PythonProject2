@@ -39,4 +39,3 @@ class PizzaAddPhotoView(UpdateAPIView):
         pizza = self.get_object()
         pizza.photo.delete()
         super().perform_update(serializer)
-
