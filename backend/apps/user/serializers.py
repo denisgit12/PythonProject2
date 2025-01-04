@@ -3,6 +3,8 @@ from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
 from apps.user.models import ProfileModel
+from core.services.email_service import EmailService
+from django.db.transaction import atomic
 
 UserModel = get_user_model()
 
@@ -44,8 +46,10 @@ class UserSerializer(serializers.ModelSerializer):
             }
         }
 
+    @atomic
     def create(self, validated_data:dict):
         profile = validated_data.pop('profile')
         user = UserModel.objects.create_user(**validated_data)
         ProfileModel.objects.create(**profile, user=user)
+        EmailService.register(user)
         return user

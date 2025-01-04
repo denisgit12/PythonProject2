@@ -15,7 +15,7 @@ from django.template.loader import get_template
 class UserListCreateView(ListCreateAPIView):
     queryset = UserModel.objects.all()
     serializer_class = UserSerializer
-
+    permission_classes = [AllowAny]
 
 class BlockUserView(GenericAPIView):
     def get_queryset(self):
